@@ -1,14 +1,33 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>ProjetoSensores</title>
-  <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
-  <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
+  <title>Projeto Sensores</title>
+  <%= stylesheet_link_tag "application", "bootstrap", :media => "all" %>
+  <%= javascript_include_tag "application", "bootstrap.min", "bootswatch", "jquery" %>
   <%= csrf_meta_tags %>
 </head>
-<body>
+<body style="" onload="mostraTempoSessao()">
+<div class="navbar navbar-default navbar-fixed-top">
+  <div class="container">
+    <div class="navbar-header">
+      <%= link_to "Projeto Sensores", root_path, class: "navbar-brand" %>
+    </div>
+    <div class="navbar-collapse collapse" id="navbar-main">
+      <ul class="nav navbar-nav">
+        <li>
+          <%= link_to "Listar Posições", position_details_path %>
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>
 
-<%= yield %>
-
+<div class="container">
+  <br/>
+  <br/>
+  <%= flash_messages %>
+  <%= yield %>
+</div>
+<!-- /.container -->
 </body>
 </html>

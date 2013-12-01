@@ -2,6 +2,7 @@ class PositionDetailsController < ApplicationController
   respond_to :json
 
   def index
+    @position_details = PositionDetail.all
   end
 
   def create

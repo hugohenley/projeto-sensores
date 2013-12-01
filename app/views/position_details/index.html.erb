@@ -1,0 +1,26 @@
+<h2>Posições Cadastradas:</h2>
+
+<% unless @position_details.empty? %>
+
+    <table class="table">
+      <tr>
+        <th>Modelo do Telefone</th>
+        <th>Operadora</th>
+        <th>Potência do Sinal</th>
+        <th>Latitute</th>
+        <th>Longitute</th>
+        <th>Timestamp</th>
+      </tr>
+      <%= @position_details.each do |position| %>
+          <tr><%= position.phone_model %></tr>
+          <tr><%= position.carrier %></tr>
+          <tr><%= position.signal %></tr>
+          <tr><%= position.latitute %></tr>
+          <tr><%= position.longitute %></tr>
+          <tr><%= position.timestamp %></tr>
+      <% end %>
+
+<% else %>
+    <h3>Nenhuma posição cadastrada até o momento! :(</h3>
+<% end %>
+</table>
