@@ -5,7 +5,7 @@ class CreatePositionDetails < ActiveRecord::Migration
       t.string :carrier
       t.string :signal
       t.string :latitude
-      t.string :longitute
+      t.string :longitude
       t.string :timestamp
 
       t.timestamps

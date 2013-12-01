@@ -19,9 +19,9 @@ ActiveRecord::Schema.define(version: 20131201173518) do
   create_table "position_details", force: true do |t|
     t.string   "phone_model"
     t.string   "carrier"
-    t.string   "sinal"
+    t.string   "signal"
     t.string   "latitude"
-    t.string   "longitute"
+    t.string   "longitude"
     t.string   "timestamp"
     t.datetime "created_at"
     t.datetime "updated_at"
