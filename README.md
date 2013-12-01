@@ -31,6 +31,27 @@ Exemplo: {
         }
 ```
 
+Se você está utilizando Ruby para fazer a requisição, um exemplo de implementação é:
+
+```
+require 'uri'
+require 'net/http'
+URL = "http://projeto-sensores.herokuapp.com/position_details"
+uri = URI(URL)
+req = Net::HTTP::Post.new(uri.path)
+req.set_form_data(
+         "position_details[phone_model]" => "Samsung Galaxy S4",
+         "position_details[carrier]" => "VIVO",
+         "position_details[signal]" => "-72dBm",
+         "position_details[latitude]" => "-22° 54' 10''",
+         "position_details[longitude]" => "-43° 12' 27''",
+         "position_details[timestamp]" => "20131130094247"
+         )
+res = Net::HTTP.start(uri.host) do |http|
+  http.request(req)
+end
+```
+
 <strong>Para visualizar todos os registros salvos</strong>
 
 <strong>URL:</strong> http://projeto-sensores.herokuapp.com/position_details.json
