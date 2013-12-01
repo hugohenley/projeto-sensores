@@ -20,14 +20,15 @@ Para criar um novo registro
 <strong>Params:</strong> phone_model, carrier, signal, latitude, longitude, timestamp
 
 ```
-Exemplo: { "phone_model": 
-                      "Samsung Galaxy S4",
-                      "carrier": "Vivo",
-                      "signal": "-58dBm",
-                      "latitude": "192309213",
-                      "longitude": "32049244",
-                      "timestamp": "20131201173518"
-                }
+Exemplo: {
+            "phone_model":
+            "Samsung Galaxy S4",
+            "carrier": "Vivo",
+            "signal": "-58dBm",
+            "latitude": "192309213",
+            "longitude": "32049244",
+            "timestamp": "20131201173518"
+        }
 ```
 
 <strong>Para visualizar todos os registros salvos</strong>
