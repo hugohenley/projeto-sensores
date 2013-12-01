@@ -11,7 +11,7 @@ A chamada é feita através dos parâmetros estabelecidos e método HTTP POST.
 
 ### API REST
 
-Para criar um novo registro
+<strong>Para criar um novo registro</strong>
 
 <strong>URL:</strong> http://projeto-sensores.herokuapp.com/position_details
 
