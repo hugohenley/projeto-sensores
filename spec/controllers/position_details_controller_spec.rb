@@ -9,7 +9,7 @@ describe PositionDetailsController do
                        carrier: "VIVO",
                        signal: "-72dBm",
                        latitude: "-22° 54' 10''",
-                       longitute: "-43° 12' 27''",
+                       longitude: "-43° 12' 27''",
                        timestamp: "20131130094247" }
         }
       end
@@ -39,6 +39,10 @@ describe PositionDetailsController do
         PositionDetail.first.longitude.should == @params[:position_details][:longitude]
         PositionDetail.first.timestamp.should == @params[:position_details][:timestamp]
       end
+    end
+
+    context "request without success" do
+
     end
 
   end
