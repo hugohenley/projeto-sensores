@@ -11,13 +11,15 @@
         <th>Longitute</th>
         <th>Timestamp</th>
       </tr>
-      <%= @position_details.each do |position| %>
-          <tr><%= position.phone_model %></tr>
-          <tr><%= position.carrier %></tr>
-          <tr><%= position.signal %></tr>
-          <tr><%= position.latitute %></tr>
-          <tr><%= position.longitute %></tr>
-          <tr><%= position.timestamp %></tr>
+      <% @position_details.each do |position| %>
+          <tr>
+            <td><%= position.phone_model %></td>
+            <td><%= position.carrier %></td>
+            <td><%= position.signal %></td>
+            <td><%= position.latitude %></td>
+            <td><%= position.longitude %></td>
+            <td><%= position.timestamp %></td>
+          </tr>
       <% end %>
 
 <% else %>
