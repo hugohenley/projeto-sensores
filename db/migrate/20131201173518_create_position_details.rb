@@ -3,7 +3,7 @@ class CreatePositionDetails < ActiveRecord::Migration
     create_table :position_details do |t|
       t.string :phone_model
       t.string :carrier
-      t.string :sinal
+      t.string :signal
       t.string :latitude
       t.string :longitute
       t.string :timestamp
