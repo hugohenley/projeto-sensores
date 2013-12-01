@@ -1,16 +1,16 @@
 require 'spec_helper'
 
 describe PositionDetailsController do
-  describe "index" do
+  describe "create" do
     context "request with success" do
       before do
-        @params = { position_details:
-                      { phone_model: "Samsung Galaxy S4",
-                       carrier: "VIVO",
-                       signal: "-72dBm",
-                       latitude: "-22° 54' 10''",
-                       longitude: "-43° 12' 27''",
-                       timestamp: "20131130094247" }
+        @params = {position_details:
+                       {phone_model: "Samsung Galaxy S4",
+                        carrier: "VIVO",
+                        signal: "-72dBm",
+                        latitude: "-22° 54' 10''",
+                        longitude: "-43° 12' 27''",
+                        timestamp: "20131130094247"}
         }
       end
 
@@ -19,15 +19,11 @@ describe PositionDetailsController do
         expect(response.code).to be == "200"
       end
 
-      it "returns a JSON if all the params are correct" do
-
-        end
-
       it "expect to save position details" do
         post :create, @params
 
         PositionDetail.count.should == 1
-        end
+      end
 
       it "expect the details to be the same of the params" do
         post :create, @params
@@ -45,5 +41,28 @@ describe PositionDetailsController do
 
     end
 
+  end
+
+  describe "index" do
+    before do
+      FactoryGirl.create :position_detail
+      @position_details_sample = File.read 'spec/assets/position_details_sample.json'
+    end
+
+    it "returns a JSON with position details content" do
+      get :index, :format => :json
+
+      parsed_json = JSON.parse(response.body).first
+
+      parsed_json.should have_key("id")
+      parsed_json.should have_key("phone_model")
+      parsed_json.should have_key("carrier")
+      parsed_json.should have_key("signal")
+      parsed_json.should have_key("latitude")
+      parsed_json.should have_key("longitude")
+      parsed_json.should have_key("timestamp")
+      parsed_json.should have_key("created_at")
+      parsed_json.should have_key("updated_at")
+    end
   end
 end
