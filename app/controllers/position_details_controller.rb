@@ -7,7 +7,8 @@ class PositionDetailsController < ApplicationController
   end
 
   def create
-    @position_details = PositionDetail.new(position_detail_params)
+    @position_details = PositionDetail.new
+    @position_details.with_api_params(params)
     if @position_details.save
       render json: "Created with success!"
     else
