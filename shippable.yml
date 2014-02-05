@@ -2,4 +2,7 @@ language: ruby
 rvm:
   - 2.0.0
 script:
+  - rake db:create
+  - rake db:migrate
+  - rake db:test:load
   - bundle exec rspec
